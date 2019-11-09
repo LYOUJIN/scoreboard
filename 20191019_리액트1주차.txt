@@ -1,0 +1,15 @@
+﻿*수업진행
+http://eastflag.co.kr
+
+*데모사이트
+http://scoreboard.eastflag.co.kr
+
+*webstorm 라이센스
+http://edu.javabrain.kr:8750
+
+react jquery처럼 dom 직접건들지 않음.
+
+React.createElement(
+type: FunctionComponent<P> | ComponentClass<P> | string,    : string 태그명
+props?: (Attributes & P) | null,     
+...children: ReactNode[]): ReactElement<P> :  점점점은 나머지 연산자임.)

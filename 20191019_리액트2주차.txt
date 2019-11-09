@@ -1,0 +1,9 @@
+﻿(node package manager)
+-g global
+
+#web project 만드는 명령어
+npm install create-react-app -g
+create-react-app scoreboard
+=> npx create-react-app scoreboard (위와 같은 명렁어)
+
+https://github.com/eastflag/scoreboard.git
