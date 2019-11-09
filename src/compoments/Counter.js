@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import {changeScore} from "../redux/action";
+import classNames from 'classnames';
+
 import styles from '../pages/scoreboard/Scoreboard.module.css';
+
 
 // function  컴포넌트를 class 컴포넌트로 전환
 class Counter extends React.Component {
@@ -16,9 +19,11 @@ class Counter extends React.Component {
 	render() {
 		return (
 			<div className={styles.counter}>
-				<button className="counter-action decrement" onClick={() => this.incrementScore(-1)}> - </button>
-				<span className="counter-score">{this.props.score}</span>
-				<button className="counter-action increment" onClick={() => this.incrementScore(1)}> + </button>
+				<button className={classNames(styles['counter-action'], styles['decrement'])}
+								onClick={() => this.incrementScore(-1)}> - </button>
+				<span className={styles['counter-score']}>{this.props.score}</span>
+				<button className={classNames(styles['counter-action'], styles['increment'])}
+								onClick={() => this.incrementScore(1)}> + </button>
 			</div>
 		);
 	}
