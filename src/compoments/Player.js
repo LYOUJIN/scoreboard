@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import {removePlayer} from "../redux/action";
 import {connect} from "react-redux";
 
-class Player extends React.Component {
+import styles from '../pages/scoreboard/Scoreboard.module.css';
+
+class Player extends React.PureComponent {
 
 	static propsType = {
 		name: PropTypes.string,
@@ -18,9 +20,10 @@ class Player extends React.Component {
 	const {removePlayer, id,name, score, changeScore} = this.props;
 
 		return (
-			<div className="player">
-				<span className="player-name">
-					<button className="remove-player" onClick={() => removePlayer(id)}> x </button>
+			<div className={styles.player}>
+				<span className={styles['player-name']}>
+					<button className={styles['remove-player']} onClick={() => removePlayer(id)}> x </button>
+					{this.props.children}
 					{name}
 				</span>
 
@@ -28,10 +31,10 @@ class Player extends React.Component {
 		)
 	};
 
-	shouldComponentUpdate(nextProps, nextState, nextContext) {
+	/*shouldComponentUpdate(nextProps, nextState, nextContext) {
 		//기존 score와 nextProps의 score가 다르면 true
 			return this.props.score !== nextProps.score ? true : false;
-		}
+		}*/
 };
 
 const mapActionToProps = (dispatch) => ({
